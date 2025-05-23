@@ -1,79 +1,63 @@
-version: "2"
-run:
-  issues-exit-code: 1
+linters-settings:
+  errcheck:
+    check-type-assertions: true
+  exhaustive:
+    default-signifies-exhaustive: true
+  goconst:
+    min-len: 2
+    min-occurrences: 3
+  gocritic:
+    enabled-tags:
+      - diagnostic
+      - experimental
+      - opinionated
+      - performance
+      - style
+  govet:
+    enable-all: true
+  stylecheck:
+    checks: ["ST1000", "ST1001"]
+  nolintlint:
+    require-explanation: true
+    require-specific: true
+  wsl:
+    allow-assign-and-anything: true
+    allow-cuddle-declarations: true
+    allow-assign-and-call: true
+
 linters:
-  default: none
+  disable-all: true
   enable:
     - bodyclose
-    - copyloopvar
     - dogsled
     - dupl
     - errcheck
+    - copyloopvar
     - exhaustive
     - goconst
+    - gofmt
+    - goimports
+    - govet
+    - mnd
     - gocyclo
     - gosec
+    - gosimple
     - govet
     - ineffassign
     - misspell
-    - mnd
-    - nakedret
     - nolintlint
+    - nakedret
     - prealloc
     - predeclared
     - staticcheck
+    - stylecheck
     - thelper
     - tparallel
+    - typecheck
     - unconvert
     - unparam
     - whitespace
     - wsl
-  settings:
-    errcheck:
-      check-type-assertions: true
-    exhaustive:
-      default-signifies-exhaustive: true
-    goconst:
-      min-len: 2
-      min-occurrences: 3
-    gocritic:
-      enabled-tags:
-        - diagnostic
-        - experimental
-        - opinionated
-        - performance
-        - style
-    govet:
-      enable-all: true
-    nolintlint:
-      require-explanation: true
-      require-specific: true
-    staticcheck:
-      checks:
-        - ST1000
-        - ST1001
-    wsl:
-      allow-assign-and-call: true
-      allow-assign-and-anything: true
-      allow-cuddle-declarations: true
-  exclusions:
-    generated: lax
-    presets:
-      - comments
-      - common-false-positives
-      - legacy
-      - std-error-handling
-    paths:
-      - third_party$
-      - builtin$
-      - examples$
-formatters:
-  enable:
-    - gofmt
-    - goimports
-  exclusions:
-    generated: lax
-    paths:
-      - third_party$
-      - builtin$
-      - examples$
+
+run:
+  issues-exit-code: 1
