@@ -1,6 +1,7 @@
 package cmd
 
 import (
+	"github.com/thewhitewizard/web3data-cli/cmd/ipfs"
 	"github.com/thewhitewizard/web3data-cli/cmd/version"
 
 	"github.com/spf13/cobra"
@@ -16,5 +17,6 @@ func Execute() {
 }
 
 func init() {
+	rootCmd.AddCommand(ipfs.IPFSCmd)
 	rootCmd.AddCommand(version.VersionCmd)
 }
