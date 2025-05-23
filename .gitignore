@@ -1,0 +1,13 @@
+out/
+tmp/
+.DS_Store
+coverage.out
+
+.vscode
+.idea
+*.swp
+*.swo
+
+wallets.json
+
+*.key
