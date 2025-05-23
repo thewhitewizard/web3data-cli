@@ -1,6 +1,6 @@
 module github.com/thewhitewizard/web3data-cli
 
-go 1.24.2
+go 1.23.4
 
 require github.com/spf13/cobra v1.9.1
 
