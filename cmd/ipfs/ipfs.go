@@ -17,7 +17,7 @@ var (
 
 var IPFSCmd = &cobra.Command{
 	Use:   "ipfs",
-	Short: "Interact with IPFS",
+	Short: "📤 Interact with IPFS",
 }
 
 func init() {
