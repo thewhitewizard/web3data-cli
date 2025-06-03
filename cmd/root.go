@@ -1,6 +1,7 @@
 package cmd
 
 import (
+	"github.com/thewhitewizard/web3data-cli/cmd/arweave"
 	"github.com/thewhitewizard/web3data-cli/cmd/encryption"
 	"github.com/thewhitewizard/web3data-cli/cmd/ipfs"
 	"github.com/thewhitewizard/web3data-cli/cmd/version"
@@ -20,5 +21,6 @@ func Execute() {
 func init() {
 	rootCmd.AddCommand(encryption.EncryptionCmd)
 	rootCmd.AddCommand(ipfs.IPFSCmd)
+	rootCmd.AddCommand(arweave.ArweaveCmd)
 	rootCmd.AddCommand(version.VersionCmd)
 }
