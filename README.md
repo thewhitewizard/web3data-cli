@@ -46,13 +46,14 @@ web3datacli [command]
 
 ### Available Commands
 
-| Command      | Description                            |
-|--------------|----------------------------------------|
+| Command      | Description                             |
+| ------------ | --------------------------------------- |
+| `arweave`    | 🕸️ Interact with Arweave                 |
 | `encryption` | 🔐 Manage data encryption and decryption |
-| `ipfs`       | 📤 Interact with IPFS                   |
-| `version`    | Show the CLI version                   |
-| `completion` | Generate autocompletion for your shell |
-| `help`       | Help about any command                 |
+| `ipfs`       | 📤 Interact with IPFS                    |
+| `version`    | Show the CLI version                    |
+| `completion` | Generate autocompletion for your shell  |
+| `help`       | Help about any command                  |
 
 ---
 
@@ -61,8 +62,8 @@ web3datacli [command]
 Enable autocompletion for your shell (e.g., bash, zsh):
 
 ```bash
-web3datacli completion bash > /etc/bash_completion.d/web3datacli
-source /etc/bash_completion.d/web3datacli
+web3datacli completion zsh >  ~/.zsh_completions/_web3datacli 
+source ~/.zsh_completions/_web3datacli 
 ```
 
 ---
