@@ -23,7 +23,6 @@ var ArweaveCmd = &cobra.Command{
 }
 
 func init() {
-
 	ArweaveCmd.AddCommand(arweaveUploadCommand())
 	ArweaveCmd.AddCommand(arweaveDownloadCommand())
 }
@@ -52,12 +51,12 @@ func arweaveUploadCommand() *cobra.Command {
 				return fmt.Errorf("cannot create form file: %w", err)
 			}
 
-			if _, err := io.Copy(part, file); err != nil {
-				return fmt.Errorf("failed to copy file data: %w", err)
+			if _, errCopy := io.Copy(part, file); errCopy != nil {
+				return fmt.Errorf("failed to copy file data: %w", errCopy)
 			}
 
-			if err := writer.Close(); err != nil {
-				return fmt.Errorf("failed to close multipart writer: %w", err)
+			if errClose := writer.Close(); errClose != nil {
+				return fmt.Errorf("failed to close multipart writer: %w", errClose)
 			}
 
 			resp, err := http.Post(apiBaseURL+"/upload", writer.FormDataContentType(), &buf)
@@ -107,8 +106,9 @@ func arweaveDownloadCommand() *cobra.Command {
 			}
 
 			url := fmt.Sprintf("https://arweave.net/%s", id)
-			fmt.Printf("🔗 Downloading from: %s\n📁 Saving to: %s\n", url, output)
 
+			fmt.Printf("🔗 Downloading from: %s\n📁 Saving to: %s\n", url, output)
+			// #nosec G107 -- ID is validated and used to build a known domain URL
 			resp, err := http.Get(url)
 			if err != nil {
 				return fmt.Errorf("failed to download from Arweave: %w", err)
