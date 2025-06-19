@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.0](https://github.com/thewhitewizard/web3data-cli/compare/v1.0.0...v1.1.0) (2025-06-19)
+
+
+### Features
+
+* add arweave vith iExec API ([b42ae61](https://github.com/thewhitewizard/web3data-cli/commit/b42ae61a03f9fb246b3dee0bde0d2ac4783e7f9b))
+* fang integration ([#8](https://github.com/thewhitewizard/web3data-cli/issues/8)) ([a915aff](https://github.com/thewhitewizard/web3data-cli/commit/a915aff2455ea1641e5529e22eed1dde92b7e269))
+
 ## 1.0.0 (2025-05-23)
 
 
