@@ -9,18 +9,14 @@ import (
 	"github.com/spf13/cobra"
 )
 
-var rootCmd = &cobra.Command{
+var RootCmd = &cobra.Command{
 	Use:  "web3datacli",
 	Long: `A CLI tool to manage web3data`,
 }
 
-func Execute() {
-	cobra.CheckErr(rootCmd.Execute())
-}
-
 func init() {
-	rootCmd.AddCommand(encryption.EncryptionCmd)
-	rootCmd.AddCommand(ipfs.IPFSCmd)
-	rootCmd.AddCommand(arweave.ArweaveCmd)
-	rootCmd.AddCommand(version.VersionCmd)
+	RootCmd.AddCommand(encryption.EncryptionCmd)
+	RootCmd.AddCommand(ipfs.IPFSCmd)
+	RootCmd.AddCommand(arweave.ArweaveCmd)
+	RootCmd.AddCommand(version.VersionCmd)
 }
